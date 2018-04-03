@@ -165,11 +165,11 @@
 	}
 	let items=document.querySelectorAll(".floattlan_item");
 	let contains=document.querySelectorAll(".bigBox");
-	let flag=true;
+	// let flag=true;
 	items.forEach(function(ele,index){
 		ele.onclick=function(){
-			flag=false;
-			let ot=contains[index].offsetTop-50;
+			// flag=false;
+			let ot=contains[index].offsetTop-150;
 			document.documentElement.scrollTop=ot;
 			let now=document.documentElement.scrollTop;
 			let speed=(ot-now)/10;
@@ -186,19 +186,19 @@
 		}
 	});
 	window.addEventListener("scroll",function(){
-		if(flag){
-		let st=document.documentElement.scrollTop;
+		// if(flag){
+			let st=document.documentElement.scrollTop;
 		// let obj=tips[0];
 			for(let i=0;i<contains.length;i++){
-				if(st>=contains[i].offsetTop-50){
+				if(st>=contains[i].offsetTop-150){
 					for(let n=0;n<items.length;n++){
 						items[n].classList.remove("active");
 					}
-					items[i+1].classList.add("active");
+					items[i].classList.add("active");
 				}
 				
 			}
-		}
+		// }
 	})
 }
 // banner
